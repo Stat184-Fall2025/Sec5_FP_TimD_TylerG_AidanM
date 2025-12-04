@@ -3,9 +3,6 @@
 We are analyzing the correlation between players' heights and rebounds per game of NBA players from the 2008-2009 NBA season. We are only including players that average at least 1 rebound per game and played at least 65 games, which provides us a population of 178 players.
 
 ## Overview
-
-Expand on those introductory sentences with a brief but informative description of your project's purpose and goals. This section should help visitors decide whether they should dig deeper into your repo/project.
-
 While brainstorming we were thinking of questions in sports related to statistics, and we came up with the purpose for our project to explore the relationship between the heights of players and how many rebounds they average per game. The reason for the aforementioned constraints are that we want to only include players who have played a minimum of 65 games as the NBA has recently established this as the minimum number of games a player can play in to be considered for end of the year awards. Our other constraint is they must average a minimum of 1 rebound per game we want to have a sufficient sample size while excluding players who don't play enough to record any statistics. 
 
 Our goals for this project include:
