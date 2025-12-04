@@ -6,6 +6,14 @@ We are analyzing the correlation between players' heights and rebounds per game 
 
 Expand on those introductory sentences with a brief but informative description of your project's purpose and goals. This section should help visitors decide whether they should dig deeper into your repo/project.
 
+While brainstorming we were thinking of questions in sports related to statistics, and we came up with the purpose for our project to explore the relationship between the heights of players and how many rebounds they average per game. The reason for the aforementioned constraints are that we want to only include players who have played a minimum of 65 games as the NBA has recently established this as the minimum number of games a player can play in to be considered for end of the year awards. Our other constraint is they must average a minimum of 1 rebound per game we want to have a sufficient sample size while excluding players who don't play enough to record any statistics. 
+
+Our goals for this project include:
+- Finding correlations in the heights of players and the total rebounds per game in NBA basketball.
+- Working on tidying data, as we will get the data from online databases.
+- Showing strong proficiency in web/data scraping.
+- Easy to read visualizations.
+
 ### Interesting Insight (Optional)
 
 This is optional but highly recommended. You'll include one interesting insight from your project as part of the README. This insight is most effective when you include a visual. Keep in mind that this visual must be included as an image file (e.g., JPG, PNG, etc.). You can export plots created with `{ggplot2}` by using the function `ggsave`.
