@@ -1,4 +1,4 @@
-# Project Title
+# How Does Height Affect Rebounds per Game in the NBA?
 
 We are analyzing the correlation between heights and rebounds per game of NBA players from the 2008-2009 NBA season. We are only including players that average at least 1 rebound per game and played at least 65 games, which provides us a population of 178 players.
 
@@ -11,8 +11,9 @@ Expand on those introductory sentences with a brief but informative description 
 This is optional but highly recommended. You'll include one interesting insight from your project as part of the README. This insight is most effective when you include a visual. Keep in mind that this visual must be included as an image file (e.g., JPG, PNG, etc.). You can export plots created with `{ggplot2}` by using the function `ggsave`.
 
 ## Data Sources and Acknowledgements
-
-Be sure to list where you got any data used within the project. Be sure to acknowledge any one whose work or elements you're drawing upon.
+We acknowledge the following sources for the data collected.
+https://www.basketball-reference.com/leagues/NBA_2009_per_game.html#per_game_stats::trb_per_g
+https://www.openintro.org/data/index.php?data=nba_heights
 
 ## Current Plan
 
