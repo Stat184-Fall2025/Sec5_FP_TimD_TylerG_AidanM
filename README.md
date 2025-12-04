@@ -24,10 +24,10 @@ Use this section to explain the structure of your repo. This should help visitor
 
 
 ## Authors
-Aidan Murphy:
-  Class of                                                        
-Tim Damasco:
-  Class of                                                                                                                                  
+Aidan Murphy:                                                                                                                                        
+    Class of                                                        
+Tim Damasco:                                                                                                                                         
+    Class of                                                                                                                                  
 Tyler Gilbert:                                                                                                                                       
-    Class of 2027 
+    Class of 2027                                                                                                                                    
     Email: gilberttyler131@gmail.com
