@@ -16,8 +16,29 @@ https://www.basketball-reference.com/leagues/NBA_2009_per_game.html#per_game_sta
 https://www.openintro.org/data/index.php?data=nba_heights
 
 ## Current Plan
+Collecting data (Team working together)
+- We will pull the 2008–2009 NBA per-game dataset from Basketball Reference
+- One team member will download the full per-game stats table into a CSV or scrape it into R using read_html
+- We will then manually add player heights and positions into the dataset
 
-Provide some information about what you intend to doe with the project. You can additionally refer the visitor to your detailed plan document.
+Cleaning and Preparing the Dataset (Likely one member with collaboration from team)
+- Convert heights from feet/inches into a single numeric measurement
+- Confirm all players in the stats dataset match the height list to avoid missing values
+- Store the cleaned dataset in a shared folder in the repo so the entire team can access it
+
+Data Visualization(One member)
+- Use tidyverse packages like dplyr and ggplot2 to summarize the data.
+- Create initial plots such as scatterplots of height vs rebounds per game
+
+Statistical Analysis(One member)
+-Compute correlation between player height and total rebounds per game
+-Might look at offensive vs defensive rebounds separately
+
+Create Final Visuals + Write up (All members)
+- Produce production quality plots using ggplot2
+- Summarize findings in clear and understandable language
+- Make sure all code is reproducible and stored in a shared R script in the repo
+
 
 ## Repo Structure
 
