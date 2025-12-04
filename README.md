@@ -24,5 +24,10 @@ Use this section to explain the structure of your repo. This should help visitor
 
 
 ## Authors
-
-Give information about who are the authors of the project and how people can get in touch if they have questions.
+Aidan Murphy:
+  Class of 
+Tim Damasco:
+  Class of
+Tyler Gilbert: 
+    Class of 2027 
+    Email: gilberttyler131@gmail.com
