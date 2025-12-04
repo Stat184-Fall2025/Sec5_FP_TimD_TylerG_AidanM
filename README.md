@@ -1,6 +1,6 @@
 # Project Title
 
-Write a 1-2 sentences that quickly and clearly convey what your repo is for.
+We are analyzing the correlation between heights and rebounds per game of NBA players from the 2008-2009 NBA season. We are only including players that average at least 1 rebound per game and played at least 65 games, which provides us a population of 178 players.
 
 ## Overview
 
