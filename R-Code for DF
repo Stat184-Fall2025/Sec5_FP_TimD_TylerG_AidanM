@@ -1,0 +1,65 @@
+library(tidyverse)
+library(stringi)
+
+# 1. Read website and CSV data
+rebounding_df <- read_csv("~/Downloads/Stat184_Rebounding_Data.csv")
+heights_df <- read_tsv("https://www.openintro.org/data/tab-delimited/nba_heights.txt")
+
+# 2. Create a "Short ID" Function. Nessary step because the names between the website and CSV file are different. For example, Lou Williams vs Louis Williams
+create_short_id <- function(name) {
+  clean_name <- stri_trans_general(name, "Latin-ASCII") # Remove accents
+  first_initial <- substr(clean_name, 1, 1)             # Get first letter
+  last_name <- word(clean_name, -1)                     # Get last word
+  
+  # Combine and lowercase. For example "l williams", to standardize by the similarities between datasets
+  tolower(paste(first_initial, last_name))
+}
+
+# 3. Prepare Both Datasets
+# Added a 'clean_name' for exact matching and 'short_id' for soft matching
+heights_prep <- heights_df %>%
+  unite(col = "Player", first_name, last_name, sep = " ", remove = FALSE) %>%
+  mutate(
+    clean_name = stri_trans_general(Player, "Latin-ASCII"),
+    short_id = create_short_id(Player)
+  )
+
+rebounding_prep <- rebounding_df %>%
+  mutate(
+    clean_name = stri_trans_general(Player, "Latin-ASCII"),
+    short_id = create_short_id(Player)
+  )
+
+# --- This is where the matching process begins ---
+
+# Step 4A: The Exact Match
+matches_exact <- rebounding_prep %>%
+  inner_join(heights_prep, by = "clean_name") %>%
+  select(-ends_with(".y"), -short_id.y) %>%  
+  rename(Player = Player.x, short_id = short_id.x)
+
+# Step 4B: Identify the "Leftovers". So, who is in CSV and website but not an exact match
+leftover_players <- rebounding_prep %>%
+  anti_join(matches_exact, by = "Player")
+
+available_heights <- heights_prep %>%
+  anti_join(matches_exact, by = "clean_name")
+
+# Step 4C: The "Soft" Match. This spefically pairs the leftovers between the data sets. For example, some players on the website only had first names
+matches_soft <- leftover_players %>%
+  inner_join(available_heights, by = "short_id") %>%
+  select(-ends_with(".y"), -clean_name.y, -clean_name.x) %>%
+  rename(Player = Player.x)
+
+# 5. Combine and clean up the DF for presentation purposes
+final_df <- bind_rows(matches_exact, matches_soft) %>%
+  select(
+    -first_name, 
+    -last_name, 
+    -starts_with("..."), # This automatically removes ...8, ...9, ...10
+    -clean_name,         # Removes our helper column
+    -short_id            # Removes our helper column
+  )
+
+# 6. View Final Result
+head(final_df)
