@@ -52,7 +52,7 @@ Use this section to explain the structure of your repo. This should help visitor
 
 ## Authors
 Aidan Murphy:                                                                                                                                        
-    Class of                                                        
+    Class of 2027                                                     
 Tim Damasco:                                                                                                                                         
     Class of   2026                                                                                                                               
 Tyler Gilbert:                                                                                                                                       
