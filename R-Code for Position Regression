@@ -1,0 +1,15 @@
+# 1) Create Visualization
+ggplot(slopes_by_pos, aes(x = reorder(Pos, estimate), y = estimate)) +
+  geom_point(size = 4, color = "blue") + 
+  geom_errorbar(aes(ymin = estimate - 1.96 * std.error, 
+                    ymax = estimate + 1.96 * std.error), 
+                width = 0.2) + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(
+    title = "Importance of Height by Position",
+    subtitle = "Higher Value = Height adds more rebounds per inch",
+    x = "Position",
+    y = "Regression Slope"
+  ) +
+  coord_flip() + 
+  theme_minimal()
