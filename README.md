@@ -52,9 +52,11 @@ Use this section to explain the structure of your repo. This should help visitor
 
 ## Authors
 Aidan Murphy:                                                                                                                                        
-    Class of 2027                                                     
+    Class of 2027    
+    Email: ajm9370@psu.edu      
 Tim Damasco:                                                                                                                                         
-    Class of   2026                                                                                                                               
+    Class of 2026           
+    Email: tjd6015@psu.edu                                 
 Tyler Gilbert:                                                                                                                                       
     Class of 2027                                                                                                                                    
-    Email: gilberttyler131@gmail.com
+    Email: tpg5436@psu.edu
