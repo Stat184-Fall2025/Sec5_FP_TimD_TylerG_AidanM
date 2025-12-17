@@ -11,9 +11,11 @@ Our goals for this project include:
 - Showing strong proficiency in web/data scraping.
 - Easy to read visualizations.
 
-### Interesting Insight (Optional)
+### Interesting Insight
+Some interesting insights we found are, for starters, as shown in the H_by_P file we can see the importance of height varies by position. From our personal hypotheses, we did not believe that the 
+small forward position would be most dependent on height. Another insight we found that makes sense, is by position, centers and power forwards have the two highest averages for both offensive and 
+defensive rebounds.
 
-This is optional but highly recommended. You'll include one interesting insight from your project as part of the README. This insight is most effective when you include a visual. Keep in mind that this visual must be included as an image file (e.g., JPG, PNG, etc.). You can export plots created with `{ggplot2}` by using the function `ggsave`.
 
 ## Data Sources and Acknowledgements
 We acknowledge the following sources for the data collected.
