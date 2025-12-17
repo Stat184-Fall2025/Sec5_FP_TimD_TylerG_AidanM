@@ -13,8 +13,8 @@ Our goals for this project include:
 
 ### Interesting Insight
 Some interesting insights we found are, for starters, as shown in the H_by_P file we can see the importance of height varies by position. From our personal hypotheses, we did not believe that the 
-small forward position would be most dependent on height. Another insight we found that makes sense, is by position, centers and power forwards have the two highest averages for both offensive and 
-defensive rebounds.
+small forward position would be most dependent on height. Another insight we found that can be supported by the "Off vs. Def rpg Fina l.png" graph, is that when looking at each position, centers
+and power forwards have the two highest averages for both offensive and defensive rebounds.
 
 
 ## Data Sources and Acknowledgements
