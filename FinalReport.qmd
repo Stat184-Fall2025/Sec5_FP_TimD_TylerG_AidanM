@@ -1,0 +1,48 @@
+---
+title: "How Does Height Affect Rebounds per Game in the NBA?"
+author: "Tim Damasco, Aidan Murphy, Tyler Gilbert"
+date: "December 17, 2025, 2025"
+format: pdf
+---
+
+## Purpose and Motivation
+
+Professional basketball rebounding is often assumed to be dominated by height. Taller players are expected to secure more rebounds simply due to physical reach and proximity to the basket. However, rebounding is also influenced by player role, positioning, and team strategy. These are factors that vary substantially by on the court position. This project investigates how player height relates to rebounds per game during the 2008–2009 NBA season, and critically examines whether the importance of height differs by position.
+
+Rather than assuming a uniform relationship across all players, this analysis explores position specific patterns, distinguishing between offensive and defensive rebounds. This approach allows us to move beyond the simplistic “taller is better” assumption and toward a more nuanced understanding of rebounding dynamics in professional basketball.
+
+## Data Sources
+This analysis combines two publicly available datasets:   
+  	•	NBA Rebounding Statistics (2008–2009)-Per-game rebounding statistics (ORB, DRB, TRB, games played, position) scraped from Basketball Reference.    
+  		•	NBA Player Heights Dataset-Height measurements sourced from the OpenIntro NBA Heights dataset.
+
+        
+**Inclusion Criteria:**   
+To ensure meaningful and comparable statistics, players were filtered to:    
+	•	Have played at least 65 games.   
+	•	Average at least 1 rebound per game.    
+
+After filtering and matching, the final dataset includes 178 NBA players across all five standard positions.
+
+## Data Tidying, Wrangling, and Cleaning
+Prior to analysis, both datasets required preparation to ensure consistency and accurate player matching. Player names across the rebounding statistics and height datasets were formatted differently, including the presence of accents, abbreviated first names, and alternative spellings. To address this, all player names were standardized by removing accents and normalizing text formatting. A two stage matching procedure was then implemented. First, an exact name match was performed for players with identical standardized names across both datasets. For remaining unmatched players, a secondary soft matching approach was used, which relied on a shortened identifier composed of the player’s first initial and last name. This approach allowed for successful matching of players with minor naming discrepancies while minimizing the risk of incorrect merges.         
+
+Additional cleaning steps were taken to ensure the integrity of the dataset. Players with insufficient participation were excluded by filtering out those who appeared in fewer than 65 games, as their per-game statistics may not reliably reflect typical performance. Players averaging fewer than one rebound per game were also removed to eliminate cases where rebounding was not a meaningful component of the player’s role. Height values were converted into numeric form to support regression analysis, and redundant helper variables created during the matching process were removed to produce a clean, dataset. These steps resulted in a final analytical dataset consisting of 178 players with complete and reliable information suitable for exploratory and inferential analysis.
+
+## Principle Evaluation
+The datasets used in this project largely satisfy the FAIR data principles. The data are findable and accessible, as both sources are publicly available and clearly documented within the project repository. Accessibility is further supported by the use of open file formats, such as CSV, which can be read by a wide range of statistical and computational tools. Interoperability is achieved through the use of standardized variable structures and open source software, enablingintegration and reuse. Reusability is supported by thorough documentation of the data cleaning and matching procedures, allowing other researchers to replicate or extend the analysis.    
+
+With respect to the CARE principles, this project aligns appropriately given the nature of the data. The analysis contributes to collective benefit by improving understanding of how physical attributes interact with positional roles in professional basketball. Authority to control is not a concern, as the data consist solely of aggregated, publicly reported performance statistics from professional athletes. Responsibility is demonstrated through careful contextualization of results, avoiding overgeneralization or misrepresentation of individual players. Ethical considerations are minimal, as the data contain no sensitive or personally identifiable information beyond what is already publicly available.
+
+## Attributes Used in Analysis
+This analysis focuses on a combination of original and derived attributes that together capture both individual performance and positional context. The primary attributes sourced directly from the datasets include player height, offensive rebounds per game, defensive rebounds per game, total rebounds per game, position, and games played. These variables form the foundation of the analysis, allowing direct examination of rebounding performance and its relationship to physical stature.    
+
+In addition to the original variables, several derived attributes were created to support deeper insight. Position averages for offensive, defensive, and total rebounds were computed to summarize typical rebounding behavior across roles. Regression slopes representing rebounds gained per additional inch of height were calculated separately for each position, along with associated confidence intervals. These derived measures enable a comparison of the marginal importance of height across positions and facilitate interpretation beyond simple correlations. Together, the original and derived attributes allow the analysis to address both broad trends and nuanced positional differences.
+
+## Exploratory Data Analysis
+Exploratory data analysis revealed clear structural patterns in rebounding behavior across positions. Average rebounds per game increase consistently from guards to centers, reflecting the positional responsibilities inherent in professional basketball. Defensive rebounds exceed offensive rebounds across all positions, highlighting the strategic emphasis on securing possession following opponent misses. Height distributions vary substantially by position, with centers exhibiting less variation and guards showing the widest range, further justifying an analytical approach focused on position.   
+
+The exploratory analysis also indicated meaningful variability in rebounding performance within positions, suggesting that height alone does not fully explain rebounding success. Some shorter players outperform taller peers within the same role, pointing to the influence of factors such as positioning, effort, and team scheme. These observations motivated the decision to analyze the relationship between height and rebounding separately by position rather than relying on a single pooled model. By doing so, the analysis better captures the contextual role that height plays within different on the court responsibilities and sets the foundation for the inferential results.
+
+## Code Appendix
+
