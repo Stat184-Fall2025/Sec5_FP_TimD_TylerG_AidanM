@@ -1,0 +1,33 @@
+# 1) Prepare the Data
+table_data <- final_df %>%
+  group_by(Pos) %>%
+  summarize(
+    Count = n(),
+    Height = round(mean(h_in), 1),
+    TRB = round(mean(TRB), 1),
+    ORB = round(mean(ORB), 1),
+    DRB = round(mean(DRB), 1)
+  ) %>%
+  arrange(desc(TRB)) %>% # Sort by Rebounds so the table has an order
+  mutate(Pos = factor(Pos, levels = rev(Pos))) %>% # Fix the row order for the plot
+  pivot_longer(cols = -Pos, names_to = "Column", values_to = "Value") %>%
+  mutate(Column = factor(Column, levels = c("Count", "Height", "TRB", "ORB", "DRB")))
+
+# 2) Create the Table Plot
+ggplot(table_data, aes(x = Column, y = Pos)) +
+  
+  geom_tile(fill = "white", color = "black", linewidth = 0.5) +
+  geom_text(aes(label = Value), size = 5, color = "black") +
+  scale_x_discrete(position = "top") +
+  labs(
+    title = "Position Baseline Stats",
+    x = NULL, 
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.text.x = element_text(face = "bold", size = 12, color = "black"),
+    axis.text.y = element_text(face = "bold", size = 12, color = "black"),
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold", margin = margin(b = 10))
+  )
